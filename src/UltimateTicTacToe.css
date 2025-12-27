@@ -1,0 +1,83 @@
+/* Container for the entire ultimate board */
+.ultimate-board-container {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+/* Ultimate board (3x3 grid of small boards) - maintain square aspect ratio */
+.ultimate-board {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+/* Small board (3x3 grid of cells) - maintain square aspect ratio */
+.small-board {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: var(--gray-3);
+  border: 2px solid var(--gray-6);
+  border-radius: var(--radius-2);
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.small-board-grid {
+  width: 100%;
+  height: 100%;
+}
+
+/* Individual cell - maintain square aspect ratio */
+.cell {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: var(--gray-1);
+  border: 1px solid var(--gray-5);
+  border-radius: var(--radius-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.cell:hover {
+  background-color: var(--gray-2);
+}
+
+/* Icons for X and O */
+.cell-icon {
+  width: 60%;
+  height: 60%;
+}
+
+.cell-icon[data-radix-icon="Cross1Icon"] {
+  color: var(--blue-9);
+}
+
+.cell-icon[data-radix-icon="CircleIcon"] {
+  color: var(--red-9);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .small-board {
+    padding: 0.25rem;
+  }
+  
+  .cell {
+    border-width: 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ultimate-board-container {
+    padding: 0.5rem;
+  }
+  
+  .small-board {
+    padding: 0.2rem;
+  }
+}
